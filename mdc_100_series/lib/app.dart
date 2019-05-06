@@ -32,7 +32,6 @@ class ShrineApp extends StatelessWidget {
       // TODO: Change backLayer field value to CategoryMenuPage (104)
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
-      // TODO: Add a theme (103)
       theme: _kShrineTheme,
     );
   }
@@ -50,7 +49,6 @@ class ShrineApp extends StatelessWidget {
   }
 }
 
-// TODO: Build a Shrine Theme (103)
 final _kShrineTheme = _buildShrineTheme();
 
 ThemeData _buildShrineTheme() {
@@ -66,21 +64,17 @@ ThemeData _buildShrineTheme() {
       cardColor: kShrineBackgroundWhite,
       textSelectionColor: kShrinePink100,
       errorColor: kShrineErrorRed,
-      // TODO: Add the text themes (103)
       textTheme: _buildShrineTextTheme(base.textTheme),
       primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
       accentTextTheme: _buildShrineTextTheme(base.accentTextTheme),
-      // TODO: Add the icon themes (103)
       primaryIconTheme: base.iconTheme.copyWith(
         color: kShrineBrown900,
       ),
-      // TODO: Decorate the inputs (103)
       inputDecorationTheme: InputDecorationTheme(
         border: CutCornersBorder(),
       ));
 }
 
-// TODO: Build a Shrine Text Theme (103)
 TextTheme _buildShrineTextTheme(TextTheme base) {
   return base
       .copyWith(
