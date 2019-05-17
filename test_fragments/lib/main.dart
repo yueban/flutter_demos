@@ -4,11 +4,13 @@ import 'package:test_fragments/test_routes.dart';
 import 'test_draw.dart';
 import 'test_async.dart';
 import 'lifecycler.dart';
+import 'rotation_on_double_tap.dart';
 
 void main() => runApp(
-      MyApp(),
+      // MyApp(),
       // SampleAsyncApp(),
       // LifecycleWatcher(),
+      RotationOnDoubelTapApp(),
     );
 
 class MyApp extends StatelessWidget {
@@ -76,5 +78,60 @@ Widget buildLayout(BuildContext context) {
     ],
   );
 
-  return listView;
+  GestureDetector gestureDetector = GestureDetector(
+    child: FlutterLogo(
+      size: 200,
+    ),
+    // tap
+    onTap: () => print('onTap'),
+    onTapDown: (TapDownDetails tapDownDetails) =>
+        print('onTapDown: $tapDownDetails'),
+    onTapUp: (TapUpDetails tapUpDetails) => print('onTapUp: $tapUpDetails'),
+    onTapCancel: () => print('onTapCancel'),
+    // double tap
+    onDoubleTap: () => print('onDoubleTap'),
+    // force press
+    onForcePressStart: (ForcePressDetails forcePressDetails) =>
+        print('onForcePressStart: $forcePressDetails'),
+    onForcePressEnd: (ForcePressDetails forcePressDetails) =>
+        print('onForcePressEnd: $forcePressDetails'),
+    onForcePressPeak: (ForcePressDetails forcePressDetails) =>
+        print('onForcePressPeak: $forcePressDetails'),
+    onForcePressUpdate: (ForcePressDetails forcePressDetails) =>
+        print('onForcePressUpdate: $forcePressDetails'),
+    //long press
+    onLongPress: () => print('onLongPress'),
+    onLongPressStart: (LongPressStartDetails longPressStartDetails) =>
+        print('onLongPressStart: $longPressStartDetails'),
+    onLongPressEnd: (LongPressEndDetails longPressEndDetails) =>
+        print('onLongPressEnd: $longPressEndDetails'),
+    onLongPressMoveUpdate:
+        (LongPressMoveUpdateDetails longPressMoveUpdateDetails) =>
+            print('onLongPressMoveUpdate: $longPressMoveUpdateDetails'),
+    onLongPressUp: () => print('onLongPressUp'),
+    // vertical
+    onVerticalDragStart: (DragStartDetails dragStartDetails) =>
+        'onVerticalDragStart: $dragStartDetails',
+    onVerticalDragEnd: (DragEndDetails dragEndDetails) =>
+        'onVerticalDragEnd: $dragEndDetails',
+    onVerticalDragUpdate: (DragUpdateDetails dragUpdateDetails) =>
+        'onVerticalDragUpdate: $dragUpdateDetails',
+    onVerticalDragDown: (DragDownDetails dragDownDetails) =>
+        'onVerticalDragDown: $dragDownDetails',
+    onVerticalDragCancel: () => 'onVerticalDragCancel',
+    // horizontal
+    onHorizontalDragStart: (DragStartDetails dragStartDetails) =>
+        'onHorizontalDragStart: $dragStartDetails',
+    onHorizontalDragEnd: (DragEndDetails dragEndDetails) =>
+        'onHorizontalDragEnd: $dragEndDetails',
+    onHorizontalDragUpdate: (DragUpdateDetails dragUpdateDetails) =>
+        'onHorizontalDragUpdate: $dragUpdateDetails',
+    onHorizontalDragDown: (DragDownDetails dragDownDetails) =>
+        'onHorizontalDragDown: $dragDownDetails',
+    onHorizontalDragCancel: () => 'onHorizontalDragCancel',
+  );
+
+  return Center(
+    child: gestureDetector,
+  );
 }
