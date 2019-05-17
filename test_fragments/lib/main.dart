@@ -6,6 +6,7 @@ import 'test_async.dart';
 import 'lifecycler.dart';
 import 'rotation_on_double_tap.dart';
 import 'test_listview.dart';
+import 'test_text_input.dart';
 
 void main() => runApp(
       MyApp(),
@@ -33,9 +34,11 @@ class MyApp extends StatelessWidget {
       //   child: Image.asset('images/avatar.png'),
       // ),
 
-      // home: buildLayout(context),
+      // home: ListViewPage(),
 
-      home: ListViewPage(),
+      home: TextInputWidget(),
+
+      // home: buildLayout(context),
     );
   }
 }
@@ -134,7 +137,12 @@ Widget buildLayout(BuildContext context) {
     onHorizontalDragCancel: () => 'onHorizontalDragCancel',
   );
 
+  Text fontText = Text(
+    'font text, 有字体的文字',
+    style: TextStyle(fontFamily: 'FZYanSongJian'),
+  );
+
   return Center(
-    child: gestureDetector,
+    child: fontText,
   );
 }
