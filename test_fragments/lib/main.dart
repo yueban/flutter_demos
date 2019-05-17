@@ -7,6 +7,7 @@ import 'lifecycler.dart';
 import 'rotation_on_double_tap.dart';
 import 'test_listview.dart';
 import 'test_text_input.dart';
+import 'test_preference.dart';
 
 void main() => runApp(
       MyApp(),
@@ -36,7 +37,9 @@ class MyApp extends StatelessWidget {
 
       // home: ListViewPage(),
 
-      home: TextInputWidget(),
+      // home: TextInputWidget(),
+
+      home: PreferenceCounter(),
 
       // home: buildLayout(context),
     );
