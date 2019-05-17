@@ -5,12 +5,13 @@ import 'test_draw.dart';
 import 'test_async.dart';
 import 'lifecycler.dart';
 import 'rotation_on_double_tap.dart';
+import 'test_listview.dart';
 
 void main() => runApp(
-      // MyApp(),
+      MyApp(),
       // SampleAsyncApp(),
       // LifecycleWatcher(),
-      RotationOnDoubelTapApp(),
+      // RotationOnDoubelTapApp(),
     );
 
 class MyApp extends StatelessWidget {
@@ -32,7 +33,9 @@ class MyApp extends StatelessWidget {
       //   child: Image.asset('images/avatar.png'),
       // ),
 
-      home: buildLayout(context),
+      // home: buildLayout(context),
+
+      home: ListViewPage(),
     );
   }
 }
